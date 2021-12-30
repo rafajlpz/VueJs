@@ -4,7 +4,9 @@ const app = Vue.createApp({
         return {
             product: "Socks",
             image: "./assets/images/socks_blue.jpg",
-            url: "https://lavozdegalicia.es"
+            url: "https://lavozdegalicia.es",
+            inStock: false,
+            inventory: 0
         }
     }
 })
