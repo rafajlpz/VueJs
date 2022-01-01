@@ -12,7 +12,8 @@ const app = Vue.createApp({
                 {id: 2234, color: 'green', image: './assets/images/socks_green.jpg'},
                 {id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg'}
             ],
-            cart:0 // Numero inicial en el carrito
+            cart:0, // Numero inicial en el carrito
+            activeClass: false
         }
     },
     methods:{

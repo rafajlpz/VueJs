@@ -32,8 +32,21 @@
           <ul>
             <li v-for="detail in details">{{detail}}</li> <!--detail es cada elemento de "details"-->
           </ul>
-          <div v-for="variant in variants" :key="variant.id" @mouseover="updateImage(variant.image)">{{variant.color}}</div> <!--:key da al elemento DOM una llave unica, como un id-->
-          <button class="button" v-on:click="addToCart">Add to Cart</button> <!--v-on:click para escuchar eventos /+= 1 expresion que estamos desencadenando-->
+          <div v-for="variant in variants" 
+          :key="variant.id" 
+          @mouseover="updateImage(variant.image)"
+          class="color-circle active"
+
+          :style="{ backgroundColor: variant.color}">
+          
+        
+        </div> <!--:key da al elemento DOM una llave unica, como un id-->
+          <button class="button"
+          :class="{disabledButton: !inStock}"
+          :disabled="!inStock"
+          @click="addToCart">
+          Add to Cart
+        </button> <!--v-on:click para escuchar eventos /+= 1 expresion que estamos desencadenando-->
           <!--Tambien se puede usar @:click en vez de v-on:click para simlificar-->
 
         </div>
