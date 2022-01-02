@@ -60,7 +60,7 @@ app.component('product-display', {
 },
     methods: {
     addToCart() {
-        this.cart += 1 //Aumento del producto en el carrito a mas uno por cada click
+        this.$emit('add-to-cart',this.variants[this.selectedVariant].id) //Aumento del producto en el carrito a mas uno por cada click
     },
     updateVariant(index) {
         this.selectedVariant = index
